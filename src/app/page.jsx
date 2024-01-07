@@ -2,8 +2,6 @@
 'use client'
 import { useState } from 'react';
 import axios from 'axios';
-import SearchBar from '@/components/SearchBar';
-import FetchSetlist from '@/components/fetchSetlist';
 
 export default function Home() {
   const [artistName, setArtistName] = useState('');
