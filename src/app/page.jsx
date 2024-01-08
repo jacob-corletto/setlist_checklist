@@ -15,6 +15,7 @@ export default function Home() {
     try {
       const response = await axios.get(`/api/setlists?artistName=${artistName}`);
       setSetlists(response.data.setlists);
+      setError(null);
     } catch (error) {
       console.error('Error fetching setlists:', error);
       setError('Error');
