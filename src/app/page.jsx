@@ -9,6 +9,7 @@ import styles from './/page.module.css';
 export default function Home() {
   const [artistName, setArtistName] = useState('');
   const [setlists, setSetlists] = useState([]);
+  const [Error, setError] = useState(null);
 
   const fetchSetlists = async () => {
     try {
@@ -16,13 +17,14 @@ export default function Home() {
       setSetlists(response.data.setlists);
     } catch (error) {
       console.error('Error fetching setlists:', error);
+      setError('Error');
     }
   };
 
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <div className={styles.logo}>Your App Name</div>
+        <div className={styles.logo}>Setlist Checklist</div>
         <div className={styles.search}>
           <input
             type="text"
@@ -39,9 +41,11 @@ export default function Home() {
 
         </div>*/}
 
+        {Error ? <p>Artist not found try another or try again later</p>:
         <div className={styles.main_view}>
           <SetlistComponent setlists={setlists} />
         </div>
+        }
       </div>
 
       <div className={styles.footer}>
