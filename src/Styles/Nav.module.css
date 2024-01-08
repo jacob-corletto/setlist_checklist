@@ -1,0 +1,33 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1db954; /* Spotify green */
+  padding: 10px 15px; /* Slightly thinner padding */
+}
+
+.h1 {
+  color: #fff; /* White text color */
+  font-size: 1.5rem;
+}
+
+.ul {
+  list-style: none;
+  display: flex;
+}
+
+.li {
+  margin-right: 15px;
+}
+
+.a {
+  text-decoration: none;
+  color: #fff; /* White text color */
+  font-weight: bold;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.a:hover {
+  color: #f0f0f0; /* Lighter white on hover */
+}

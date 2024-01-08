@@ -1,6 +1,6 @@
 // components/SetlistComponent.js
 import React from 'react';
-
+ 
 const SetlistComponent = ({ setlists }) => {
 	return (
 			<div>
