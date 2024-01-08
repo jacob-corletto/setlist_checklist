@@ -1,0 +1,104 @@
+/* styles/globals.css */
+
+/* Reset some default styles */
+body,
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #121212;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+}
+
+.search input {
+  background-color: #282828;
+  color: #ffffff;
+  border: none;
+  padding: 8px;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.search button {
+  background-color: #1db954;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.main-content {
+  display: flex;
+  padding: 20px 0;
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #282828;
+  padding: 20px;
+}
+
+.main-view {
+  flex: 1;
+  padding: 0 20px;
+}
+
+.playlist {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #282828;
+  }
+}
+
+.playlist img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.playlist-details {
+  flex: 1;
+}
+
+.footer {
+  background-color: #282828;
+  padding: 20px 0;
+  text-align: center;
+}

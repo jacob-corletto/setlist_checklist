@@ -2,16 +2,13 @@
 'use client'
 import { useState } from 'react';
 import axios from 'axios';
+import SetlistComponent from '@/components/SetlistComponent';
+import styles from './/page.module.css';
+// import 'styles/globals.css';
 
 export default function Home() {
   const [artistName, setArtistName] = useState('');
   const [setlists, setSetlists] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
-
-
-  const handleSearch = (term) => {
-    setSearchTerm(term)
-  }
 
   const fetchSetlists = async () => {
     try {
@@ -23,23 +20,33 @@ export default function Home() {
   };
 
   return (
-    <div>
-      <h1>Setlists App</h1>
-      <input
-        type="text"
-        value={artistName}
-        onChange={(e) => setArtistName(e.target.value)}
-        placeholder="Enter artist name"
-      />
-      <button onClick={fetchSetlists}>Fetch Setlists</button>
-      <ul>
-        {setlists.map((setlist) => (
-          <li key={setlist.id}>
-            {setlist.eventDate} - {setlist.venue}
-          </li>
-        ))}
-      </ul>
+    <div className={styles.container}>
+      <div className={styles.header}>
+        <div className={styles.logo}>Your App Name</div>
+        <div className={styles.search}>
+          <input
+            type="text"
+            value={artistName}
+            onChange={(e) => setArtistName(e.target.value)}
+            placeholder="Search artist..."
+          />
+          <button onClick={fetchSetlists}>Search</button>
+        </div>
+      </div>
+
+      <div className={styles.main_content}>
+        {/*<div className={styles.sidebar}>
+
+        </div>*/}
+
+        <div className={styles.main_view}>
+          <SetlistComponent setlists={setlists} />
+        </div>
+      </div>
+
+      <div className={styles.footer}>
+        <div> This is the footer</div>
+      </div>
     </div>
-    
   );
 }

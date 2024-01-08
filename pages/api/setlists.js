@@ -20,6 +20,8 @@ export default async function handler(req, res) {
       id: setlist.id,
       eventDate: setlist.eventDate,
       venue: setlist.venue.name,
+      artist: setlist.artist.name,
+      songs: setlist.sets.set.map((set) => set.song.map((song) => song.name)).flat(),
     }));
 
     res.status(200).json({ setlists });
