@@ -38,20 +38,20 @@ export default function Home() {
       </div>
 
       <div className={styles.main_content}>
-        {/*<div className={styles.sidebar}>
-
-        </div>*/}
-
         {Error ? <p>Artist not found try another or try again later</p>:
         <div className={styles.main_view}>
           <SetlistComponent setlists={setlists} />
         </div>
         }
       </div>
-
-      <div className={styles.footer}>
-        <div> This is the footer</div>
+      <div className='text-center text-size-lg'>
+        Welcome back loser...
       </div>
+      
+      <div className='text-center text-size-lg border-2 border-black'>
+        place concerts in area here...
+      </div>
+      
     </div>
   );
 }

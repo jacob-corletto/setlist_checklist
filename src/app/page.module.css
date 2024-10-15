@@ -3,7 +3,7 @@
 .body {
   font-family: 'Arial', sans-serif;
   background-color: #121212;
-  color: #ffffff;
+  color: #000000;
   margin: 0;
   padding: 0;
 }
@@ -52,6 +52,7 @@
 .main_content {
   display: flex;
   padding: 20px 0;
+  background-color: #121212;
 }
 
 .sidebar {
@@ -63,6 +64,7 @@
 .main_view {
   flex: 1;
   padding: 0 20px;
+  background-color: #121212;
 }
 
 .playlist {
@@ -88,7 +90,7 @@
 }
 
 .footer {
-  background-color: #282828;
+  background-color: #000000;
   padding: 20px 0;
   text-align: center;
 }
