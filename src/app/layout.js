@@ -12,8 +12,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className="justify-around bg-grey">
+    <html lang="en" class="text-gray-900 bg-black font-serif" >
+      <body className="justify-around"> 
         <nav className="flex items-center justify-around bg-black p-4">
           <h1 className="text-2xl font-bold text-white">
             <a href="/">logo</a>
