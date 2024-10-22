@@ -4,6 +4,7 @@ import { useState } from "react";
 import axios from "axios";
 import SetlistComponent from "@/components/SetlistComponent";
 import styles from ".//page.module.css";
+import ConcertGrid from "@/components/ConcertGrid";
 // import "styles/globals.css";
 
 export default function Home() {
@@ -14,7 +15,7 @@ export default function Home() {
   const fetchSetlists = async () => {
     try {
       const response = await axios.get(
-        `/api/setlists?artistName=${artistName}`
+        `/api/setlists?artistName=${artistName}`,
       );
       setSetlists(response.data.setlists);
       setError(null);
@@ -49,20 +50,21 @@ export default function Home() {
           </button>
         </form>
       </div>
-
+      <div className="text-center text-lg text-white">
+        Welcome back User check out whats going on...
+      </div>
+      {/* <ConcertGrid /> */}
+      <div className="flex flex-row text-center text-size-lg border-2 border-black">
+        place concerts in area here...
+      </div>
       <div className="">
         {Error ? (
           <p>Artist not found try another or try again later</p>
         ) : (
-          <div className="rounded-sm bg-black">
+          <div className="rounded-sm bg-black text-white">
             <SetlistComponent setlists={setlists} />
           </div>
         )}
-      </div>
-      <div className="text-center text-size-lg">Welcome back loser...</div>
-
-      <div className="text-center text-size-lg border-2 border-black">
-        place concerts in area here...
       </div>
     </div>
   );
