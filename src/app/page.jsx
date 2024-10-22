@@ -53,10 +53,7 @@ export default function Home() {
       <div className="text-center text-lg text-white">
         Welcome back User check out whats going on...
       </div>
-      {/* <ConcertGrid /> */}
-      <div className="flex flex-row text-center text-size-lg border-2 border-black">
-        place concerts in area here...
-      </div>
+      <ConcertGrid />
       <div className="">
         {Error ? (
           <p>Artist not found try another or try again later</p>
