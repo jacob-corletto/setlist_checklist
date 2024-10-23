@@ -226,7 +226,7 @@ const ConcertGrid = () => {
               key={index}
               onClick={() => scrollToIndex(index)}
               className={`h-2 rounded-full transition-all duration-300 ${
-                index === currentIndex ? "bg-blue-600 w-4" : "bg-gray-300 w-2"
+                index === currentIndex ? "bg-purple-700 w-4" : "bg-gray-300 w-2"
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />

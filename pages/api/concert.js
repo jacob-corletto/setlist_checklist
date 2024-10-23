@@ -3,7 +3,7 @@ import axios from "axios";
 
 export default async function handler(req, res) {
   const { lat, lng } = req.query;
-  consol.log("lat", lat);
+  consol.log({ lat, lng });
   try {
     const response = await axios.get(
       `https://app.ticketmaster.com/discovery/v2/events.json?classificationName=music&apikey=${process.env.TICKETMASTER_API_KEY}`,
