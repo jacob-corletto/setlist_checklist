@@ -56,7 +56,7 @@ export default function Home() {
         Welcome back User check out whats going on...
       </div>
       <ConcertGrid />
-      <Test />
+      {/* <Test /> */}
       <div className="">
         {Error ? (
           <p>Artist not found try another or try again later</p>
