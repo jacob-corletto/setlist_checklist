@@ -157,8 +157,8 @@ const ConcertGrid = () => {
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-8">
         {usingPlaceholder
-          ? "Check uut what's near you"
-          : "Check uut what's near you"}
+          ? "Check out what's near you"
+          : "Check out what's near you"}
       </h1>
 
       {error && (
