@@ -5,7 +5,8 @@ import axios from "axios";
 import SetlistComponent from "@/components/SetlistComponent";
 import styles from ".//page.module.css";
 import ConcertGrid from "@/components/ConcertGrid";
-import TopTracks from "@/components/TopTracks";
+// import TopTracks from "@/components/TopTracks";
+import Test from "@/components/testing";
 // import "styles/globals.css";
 
 export default function Home() {
@@ -55,7 +56,7 @@ export default function Home() {
         Welcome back User check out whats going on...
       </div>
       <ConcertGrid />
-      {/* <TopTracks /> */}
+      <Test />
       <div className="">
         {Error ? (
           <p>Artist not found try another or try again later</p>
