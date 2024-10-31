@@ -4,7 +4,7 @@ import { useState } from "react";
 import axios from "axios";
 import SetlistComponent from "@/components/SetlistComponent";
 import styles from ".//page.module.css";
-import ConcertGrid from "@/components/ConcertGrid";
+import NearbyEventsPage from "@/components/ConcertGrid";
 // import TopTracks from "@/components/TopTracks";
 import Test from "@/components/testing";
 // import "styles/globals.css";
@@ -55,7 +55,8 @@ export default function Home() {
       <div className="text-center text-lg text-white">
         Welcome back User check out whats going on...
       </div>
-      <ConcertGrid />
+      <NearbyEventsPage />
+      {/* <ConcertGrid /> */}
       {/* <Test /> */}
       <div className="">
         {Error ? (
