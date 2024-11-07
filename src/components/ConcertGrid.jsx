@@ -73,17 +73,6 @@ export default function NearbyEventsPage() {
   const currentEvents = events.slice(currentPage * 3, (currentPage + 1) * 3);
 
   return (
-    <div className="p-4">
-      {locationError && (
-        <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
-          {locationError}
-        </div>
-      )}
-      {loading && (
-        <div className="flex justify-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-purple-700"></div>
-        </div>
-      )}
       {error && (
         <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
           {error}
