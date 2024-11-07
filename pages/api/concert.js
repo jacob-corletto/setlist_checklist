@@ -52,7 +52,8 @@ export function useNearbyEvents(lat, long) {
 
       try {
         const response = await axios.get(
-          BASE_URL + `${lat},${long}`,
+          "https://app.ticketmaster.com/discovery/v2/events.json?classificationName=music&radius=50&unit=miles&size=20&sort=date,asc&apikey=W17XQeN7pQghp72lIoFVFoATbiJjcAfi&latlong=" +
+            `${lat},${long}`,
           // {
           //   params: {
           //     latlong: `${lat},${long}`,

@@ -74,7 +74,6 @@ export default function NearbyEventsPage() {
 
   return (
     <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">Music Events Near You</h1>
       {locationError && (
         <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
           {locationError}
@@ -82,7 +81,7 @@ export default function NearbyEventsPage() {
       )}
       {loading && (
         <div className="flex justify-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900"></div>
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-purple-700"></div>
         </div>
       )}
       {error && (
@@ -92,23 +91,23 @@ export default function NearbyEventsPage() {
       )}
 
       <div className="relative">
-        <div className="flex justify-between items-center mb-4">
+        <div className="flex justify-between items-center mb-4 bg-black rounded-md">
           <button
             onClick={prevPage}
             className="p-2 rounded-full hover:bg-gray-100 transition-colors"
             aria-label="Previous page"
           >
-            <ChevronLeft className="w-6 h-6" />
+            <ChevronLeft className="w-6 h-6 text-purple-700" />
           </button>
-          <span className="text-sm text-gray-500">
-            Page {currentPage + 1} of {totalPages}
-          </span>
+          <h1 className="text-2xl font-bold mb-4 text-white mt-4">
+            Music Events Near You
+          </h1>
           <button
             onClick={nextPage}
             className="p-2 rounded-full hover:bg-gray-100 transition-colors"
             aria-label="Next page"
           >
-            <ChevronRight className="w-6 h-6" />
+            <ChevronRight className="w-6 h-6 text-purple-700" />
           </button>
         </div>
 
@@ -116,9 +115,9 @@ export default function NearbyEventsPage() {
           {currentEvents.map((event) => (
             <div
               key={event.id}
-              className="border rounded-lg shadow-md p-4 transition-all duration-300"
+              className="border bg-black rounded-lg shadow-md p-4 transition-all duration-300"
             >
-              <div className="w-full h-48 bg-gray-200 rounded-t-lg mb-4">
+              <div className="w-full h-48 bg-black rounded-t-lg mb-4">
                 {event.images?.[0] && (
                   <img
                     src={event.images[0].url}
