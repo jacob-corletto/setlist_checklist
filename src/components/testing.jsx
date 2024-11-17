@@ -21,7 +21,12 @@ export default function Test() {
           <p>Email: {profile.email}</p>
         </div>
       ) : (
-        <a href="/api/auth/login">Login with Spotify</a>
+        <button
+          className="inline-flex items-center rounded-lg bg-transparent px-5 py-2.5 text-center text-white hover:bg-purple-500 focus:outline-none focus:ring-4 focus:ring-purple-300 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800"
+          type="button"
+        >
+          <a href="/api/auth/login">Login</a>
+        </button>
       )}
     </div>
   );

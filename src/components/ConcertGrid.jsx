@@ -94,7 +94,7 @@ export default function NearbyEventsPage() {
             className="p-2 rounded-full hover:bg-gray-100 transition-colors"
             aria-label="Previous page"
           >
-            <ChevronLeft className="w-6 h-6 text-purple-700" />
+            <ChevronLeft className="w-6 h-6 text-purple-50000" />
           </button>
           <h1 className="text-2xl font-bold mb-4 text-white mt-4">
             Music Events Near You
@@ -104,7 +104,7 @@ export default function NearbyEventsPage() {
             className="p-2 rounded-full hover:bg-gray-100 transition-colors"
             aria-label="Next page"
           >
-            <ChevronRight className="w-6 h-6 text-purple-700" />
+            <ChevronRight className="w-6 h-6 text-purple-500" />
           </button>
         </div>
 
@@ -135,17 +135,11 @@ export default function NearbyEventsPage() {
                   {event._embedded.venues[0].name}
                 </p>
               )}
-              {/* {event.priceRanges?.[0] && (
-                <p className="text-gray-700 mb-2">
-                  ${event.priceRanges[0].min.toFixed(2)} - $
-                  {event.priceRanges[0].max.toFixed(2)}
-                </p>
-              )} */}
               <a
                 href={event.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors"
+                className="inline-block bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-600 transition-colors"
               >
                 Get Tickets
               </a>

@@ -7,6 +7,7 @@ import styles from ".//page.module.css";
 import NearbyEventsPage from "@/components/ConcertGrid";
 // import TopTracks from "@/components/TopTracks";
 import Test from "@/components/testing";
+import DropdownMenu from "@/components/DropdownMenu";
 // import "styles/globals.css";
 
 export default function Home() {
@@ -34,30 +35,42 @@ export default function Home() {
 
   return (
     <div className="bg-gray-600  p-4">
-      <div className="p-4 flex flex-col sm:flex-row justify-between items-center">
-        <div className="text-4xl font-bold text-white">Setlist Checklist</div>
-        <form onSubmit={handleSubmit} className="flex items-center space-x-2">
-          <input
-            type="text"
-            value={artistName}
-            onChange={(e) => setArtistName(e.target.value)}
-            placeholder="Search artist..."
-            className="p-2 border rounded"
-          />
-          <button
-            type="submit"
-            className="bg-purple-700 text-white px-4 py-2 rounded hover:bg-purple-500"
-          >
-            Search
-          </button>
-        </form>
+      <div className="p-4 flex flex-col sm:flex-row items-center justify-between bg-transparent border-2 border-purple-500 rounded-md">
+        <div className="text-3xl font-bold text-white justify-start">
+          Setlist Checklist
+        </div>
+        <div className="justify-end flex">
+          <ul className="flex space-x-4 items-center px-4">
+            <Test />
+            <li>
+              <a href="/" className="text-white hover:text-gray-300">
+                {" "}
+                About{" "}
+              </a>
+            </li>
+          </ul>
+          <form onSubmit={handleSubmit} className="flex items-center space-x-2">
+            <input
+              type="text"
+              value={artistName}
+              onChange={(e) => setArtistName(e.target.value)}
+              placeholder="Search artist..."
+              className="p-2 border rounded"
+            />
+            <button
+              type="submit"
+              className="bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-500"
+            >
+              Search
+            </button>
+          </form>
+        </div>
       </div>
-      <div className="text-center text-lg text-white">
+      <div className="text-center text-lg text-white pt-2">
         Welcome back User check out whats going on...
       </div>
       <NearbyEventsPage />
-      {/* <ConcertGrid /> */}
-      {/* <Test /> */}
+      {/* <TopTracks /> */}
       <div className="">
         {Error ? (
           <p>Artist not found try another or try again later</p>
