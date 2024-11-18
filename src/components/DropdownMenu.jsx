@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const DropdownMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,7 +14,7 @@ const DropdownMenu = () => {
       <button
         id="dropdownDefaultButton"
         onClick={toggleDropdown}
-        className="inline-flex items-center rounded-lg bg-purple-700 px-5 py-2.5 text-center text-white hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800"
+        className="inline-flex items-center rounded-lg bg-transparent px-5 py-2.5 text-center text-white hover:bg-purple-500 focus:outline-none focus:ring-4 focus:ring-purple-300 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800"
         type="button"
       >
         User
@@ -38,7 +38,7 @@ const DropdownMenu = () => {
       <div
         id="dropdown"
         className={`absolute z-10 w-44 divide-y divide-gray-100 rounded-lg bg-white shadow dark:bg-gray-700 ${
-          isOpen ? '' : 'hidden'
+          isOpen ? "" : "hidden"
         }`}
       >
         <ul
