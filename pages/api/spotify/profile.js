@@ -1,3 +1,4 @@
+const SPOTIFY_API_ENDPOINT = process.env.SPOTIFY_API_ENDPOINT;
 export default async function handler(req, res) {
   const { spotify_access_token } = req.cookies;
 
