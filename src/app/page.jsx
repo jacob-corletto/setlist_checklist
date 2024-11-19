@@ -43,7 +43,7 @@ export default function Home() {
           <ul className="flex space-x-4 items-center px-4">
             <Test />
             <li>
-              <a href="/" className="text-white hover:text-gray-300">
+              <a href="/about" className="text-white hover:text-gray-300">
                 {" "}
                 About{" "}
               </a>
