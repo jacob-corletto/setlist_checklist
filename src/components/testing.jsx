@@ -3,12 +3,15 @@ import Link from "next/link";
 
 export default function Test() {
   const [profile, setProfile] = useState(null);
+  const [userName, setUserName] = useState("user");
 
   useEffect(() => {
     const fetchProfile = async () => {
       const response = await fetch("/api/spotify/profile");
       const data = await response.json();
       setProfile(data);
+      setUserName(data.display_name);
+      console.log(data);
     };
 
     fetchProfile();
@@ -26,13 +29,16 @@ export default function Test() {
   return (
     <div>
       {profile ? (
-        <button
-          className="inline-flex items-center rounded-lg bg-transparent px-5 py-2.5 text-center text-white hover:bg-purple-500 focus:outline-none focus:ring-4 focus:ring-purple-300 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800"
-          type="button"
-          onClick={handleLogout}
-        >
-          Logout
-        </button>
+        <div>
+          <button
+            className="inline-flex items-center rounded-lg bg-transparent px-5 py-2.5 text-center text-white hover:bg-purple-500 focus:outline-none focus:ring-4 focus:ring-purple-300 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800"
+            type="button"
+            onClick={handleLogout}
+          >
+            Logout
+          </button>
+          <p>hi {userName}</p>
+        </div>
       ) : (
         <button
           className="inline-flex items-center rounded-lg bg-transparent px-5 py-2.5 text-center text-white hover:bg-purple-500 focus:outline-none focus:ring-4 focus:ring-purple-300 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800"

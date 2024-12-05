@@ -2,7 +2,7 @@
 const TOKEN_ENDPOINT = "https://accounts.spotify.com/api/token";
 const redirect_uri = process.env.SPOTIFY_REDIRECT_URI;
 const basic = Buffer.from(
-  `${process.env.SPOTIFY_CLIENT_ID}:${process.env.SPOTIFY_CLIENT_SECRET}`,
+  `${process.env.SPOTIFY_CLIENT_ID}:${process.env.SPOTIFY_CLIENT_SECRET}`
 ).toString("base64");
 
 export default async function handler(req, res) {
