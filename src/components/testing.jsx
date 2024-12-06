@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Cookies from "js-cookie";
 
 export default function Test() {
   const [profile, setProfile] = useState(null);
@@ -7,11 +8,23 @@ export default function Test() {
 
   useEffect(() => {
     const fetchProfile = async () => {
-      const response = await fetch("/api/spotify/profile");
-      const data = await response.json();
-      setProfile(data);
-      setUserName(data.display_name);
-      console.log(data);
+      const accessToken = Cookies.get("spotify_access_token");
+      const refreshToken = Cookies.get("spotify_refresh_token");
+
+      console.log(accessToken);
+      console.log(refreshToken);
+
+      if (accessToken && refreshToken) {
+        const response = await fetch("/api/spotify/profile", {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        });
+        const data = await response.json();
+        setProfile(data);
+        setUserName(data.display_name);
+        console.log(data);
+      }
     };
 
     fetchProfile();
@@ -23,6 +36,8 @@ export default function Test() {
     });
     if (response.ok) {
       setProfile(null);
+      Cookies.remove("spotify_access_token");
+      Cookies.remove("spotify_refresh_token");
     }
   };
 

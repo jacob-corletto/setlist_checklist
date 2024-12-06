@@ -25,8 +25,8 @@ export default async function handler(req, res) {
 
   // Store tokens securely - this is just an example
   res.setHeader("Set-Cookie", [
-    `spotify_access_token=${tokens.access_token}; Path=/; HttpOnly`,
-    `spotify_refresh_token=${tokens.refresh_token}; Path=/; HttpOnly`,
+    `spotify_access_token=${tokens.access_token}; Path=/;`,
+    `spotify_refresh_token=${tokens.refresh_token}; Path=/;`,
   ]);
 
   res.redirect("/");
