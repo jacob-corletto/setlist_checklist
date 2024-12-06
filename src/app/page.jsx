@@ -18,43 +18,42 @@ export default function Home() {
   const [userName, setUserName] = useState("User");
   const [accessToken, setAccessToken] = useState(null); // State variable for access token
 
-  // const getAccessToken = async () => {
-  //   try {
-  //     const token = Cookies.get("spotify_access_token"); // Adjust based on your storage mechanism
-  //     if (token) {
-  //       setAccessToken(token);
-  //     } else {
-  //       // Handle case where token is not found (e.g., redirect to login)
-  //       console.warn("Access token not found. Consider redirecting to login.");
-  //     }
-  //   } catch (error) {
-  //     console.error("Error fetching access token:", error);
-  //   }
-  // };
+  const getAccessToken = async () => {
+    try {
+      const token = Cookies.get("spotify_access_token"); // Adjust based on your storage mechanism
+      if (token) {
+        setAccessToken(token);
+      } else {
+        // Handle case where token is not found (e.g., redirect to login)
+        console.warn("Access token not found. Consider redirecting to login.");
+      }
+    } catch (error) {
+      console.error("Error fetching access token:", error);
+    }
+  };
 
-  // useEffect(() => {
-  //   const fetchProfile = async () => {
-  //     if (accessToken) {
-  //       // Only fetch profile data if access token exists
-  //       try {
-  //         const response = await axios.get("/api/spotify/profile", {
-  //           headers: { Authorization: `Bearer ${accessToken}` }, // Include access token in authorization header
-  //         });
-  //         const data = await response.json();
-  //         setUserName(data.display_name);
-  //         console.log(data);
-  //       } catch (error) {
-  //         console.error("Error fetching profile data:", error);
-  //         // Handle errors gracefully (e.g., token expiration)
-  //       }
-  //     }
-  //   };
+  useEffect(() => {
+    const fetchProfile = async () => {
+      if (accessToken) {
+        // Only fetch profile data if access token exists
+        try {
+          const response = await fetch("/api/spotify/profile", {
+            headers: { Authorization: `Bearer ${accessToken}` }, // Include access token in authorization header
+          });
+          const data = await response.json();
+          setUserName(data.display_name);
+          console.log(data);
+          console.log(Cookies.get("spotify_id"));
+        } catch (error) {
+          console.error("Error fetching profile data:", error);
+          // Handle errors gracefully (e.g., token expiration)
+        }
+      }
+    };
 
-  //   getAccessToken(); // Fetch access token on component mount
-  //   fetchProfile();
-  //   console.log(userName);
-  //   console.log(accessToken);
-  // }, [accessToken]); // Re-fetch profile data whenever access token changes
+    getAccessToken(); // Fetch access token on component mount
+    fetchProfile();
+  }, [accessToken]); // Re-fetch profile data whenever access token changes
 
   const fetchSetlists = async () => {
     try {

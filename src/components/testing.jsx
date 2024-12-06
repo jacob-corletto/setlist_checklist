@@ -52,7 +52,6 @@ export default function Test() {
           >
             Logout
           </button>
-          <p>hi {userName}</p>
         </div>
       ) : (
         <button

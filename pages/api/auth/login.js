@@ -1,5 +1,6 @@
 export default function handler(req, res) {
-  const scope = "user-read-private user-read-email playlist-read-private";
+  const scope =
+    "user-read-private user-read-email playlist-read-private playlist-read-public playlist-modify-public playlist-modify-private";
 
   const queryParams = new URLSearchParams({
     client_id: process.env.SPOTIFY_CLIENT_ID,
@@ -9,6 +10,6 @@ export default function handler(req, res) {
   });
 
   res.redirect(
-    `https://accounts.spotify.com/authorize?${queryParams.toString()}`,
+    `https://accounts.spotify.com/authorize?${queryParams.toString()}`
   );
 }
