@@ -4,7 +4,7 @@ const displayedArtists = new Set();
 
 const SetlistComponent = ({ setlists }) => {
   return (
-    <div className="p-4">
+    <div className="p-4 bg-gray-700">
       {setlists.map((setlist) => {
         if (setlist.songs.length > 0 && displayedArtists.has(setlist.artist)) {
           displayedArtists.add(setlist.artist);
@@ -24,7 +24,7 @@ const SetlistComponent = ({ setlists }) => {
             setlist.songs.length > 0 && (
               <div
                 key={setlist.id}
-                className="bg-transparent p-4 border-2 rounded-lg border-gray-200"
+                className="bg-gray-900 p-4 border-2 rounded-lg border-gray-900 shadow-xl"
               >
                 <h2 className="border-2 rounded-lg text-xl font-bold mb-2 text-center">{setlist.artist}</h2>
                 <p>Venue: {setlist.venue}</p>

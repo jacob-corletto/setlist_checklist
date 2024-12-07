@@ -34,8 +34,8 @@ export default function Home() {
   };
 
   return (
-    <div className="bg-black-600  p-4">
-      <div className="p-4 flex flex-col sm:flex-row items-center justify-between bg-transparent border-0 border-white-500 rounded-md">
+    <div className="bg-gray-700 p-4">
+      <div className="p-4 flex flex-col sm:flex-row items-center justify-between bg-gray-900 border-2 border-gray-900 rounded-lg shadow-xl">
         <div className="text-3xl font-bold text-white justify-start">
           Setlist Checklist
         </div>
@@ -66,7 +66,7 @@ export default function Home() {
           </form>
         </div>
       </div>
-      <div className="text-center text-lg text-white pt-2">
+      <div className="text-center text-lg text-white p-8">
         Welcome back User check out whats going on...
       </div>
       <NearbyEventsPage />
