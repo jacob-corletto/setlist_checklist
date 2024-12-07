@@ -66,7 +66,7 @@ export default function Home() {
           </form>
         </div>
       </div>
-      <div className="text-center text-lg text-white p-8">
+      <div className="text-center text-lg text-white p-8 drop-shadow-xl">
         Welcome back User check out whats going on...
       </div>
       <NearbyEventsPage />
