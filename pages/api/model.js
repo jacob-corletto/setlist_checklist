@@ -8,7 +8,7 @@ export default function Model() {
 
   useEffect(() => {
     const loadModel = async () => {
-      const model = await tf.loadLayersModel("model/model.json");
+      const model = await tf.loadLayersModel("music_model/model.json");
       setModel(model);
       const summary = [];
       model.summary(null, (line) => summary.push(line));
