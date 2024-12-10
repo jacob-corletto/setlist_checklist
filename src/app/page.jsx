@@ -34,8 +34,8 @@ export default function Home() {
   };
 
   return (
-    <div className="bg-gray-700 p-4">
-      <div className="p-4 flex flex-col sm:flex-row items-center justify-between bg-gray-900 border-2 border-gray-900 rounded-lg shadow-xl">
+    <div className="bg-gradient-to-r from-slate-700 via-slate-600 to-slate-500 p-4">
+      <div className="p-4 flex flex-col sm:flex-row items-center justify-between bg-gradient-to-r from-slate-700 via-slate-600 to-slate-500 border-0 border-slate-800 rounded-lg">
         <div className="text-3xl font-bold text-white justify-start">
           Setlist Checklist
         </div>
@@ -43,13 +43,13 @@ export default function Home() {
           <ul className="flex space-x-4 items-center px-4">
             <Test />
             <li>
-              <a href="/about" className="inline-flex items-center rounded-lg bg-transparent px-5 py-2.5 text-center text-white hover:bg-purple-500 focus:outline-none focus:ring-4 focus:ring-purple-300 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800">
+              <a href="/about" className="inline-flex items-center rounded-lg bg-transparent px-5 py-2.5 text-center text-white hover:bg-purple-500 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-purple-300 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800">
                 {" "}
                 About{" "}
               </a>
             </li>
           </ul>
-          <form onSubmit={handleSubmit} className="flex items-center space-x-2">
+          <form onSubmit={handleSubmit} className="flex items-center space-x-2 shadow-xl">
             <input
               type="text"
               value={artistName}
@@ -59,7 +59,7 @@ export default function Home() {
             />
             <button
               type="submit"
-              className="bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-500"
+              className="bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-600 hover:shadow-xl transition-colors"
             >
               Search
             </button>

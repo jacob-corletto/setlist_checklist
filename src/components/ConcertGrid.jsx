@@ -88,7 +88,7 @@ export default function NearbyEventsPage() {
       )}
 
       <div className="relative">
-        <div className="flex justify-between items-center mb-4 bg-gray-900 rounded-lg shadow-xl">
+        <div className="flex justify-between items-center mb-4 bg-gray-800 rounded-lg shadow-xl">
           <button
             onClick={prevPage}
             className="p-2 rounded-full hover:bg-gray-100 transition-colors"
@@ -112,7 +112,7 @@ export default function NearbyEventsPage() {
           {currentEvents.map((event) => (
             <div
               key={event.id}
-              className="border-2 border-gray-900 bg-gray-900 rounded-lg shadow-xl p-4 transition-all duration-300"
+              className="border-2 border-slate-800 bg-slate-800 rounded-lg shadow-xl p-4 transition-all duration-300"
             >
               <div className="w-full h-48 bg-black rounded-t-lg mb-4">
                 {event.images?.[0] && (
