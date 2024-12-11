@@ -43,6 +43,9 @@ const SetlistComponent = ({ setlists }) => {
                   access_token={access_token}
                   user_id={user_id}
                   tracks={setlist.songs}
+                  artist={setlist.artist}
+                  venue={setlist.venue}
+                  eventDate={setlist.eventDate}
                 />
               </div>
             )
