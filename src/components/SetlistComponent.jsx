@@ -30,13 +30,17 @@ const SetlistComponent = ({ setlists }) => {
                 key={setlist.id}
                 className="bg-transparent p-4 border-2 rounded-lg border-gray-200"
               >
-                <h2 className="text-xl font-bold mb-2 text-center">{setlist.artist}</h2>
+                <h2 className="text-xl font-bold mb-2 text-center">
+                  {setlist.artist}
+                </h2>
                 <p>Venue: {setlist.venue}</p>
                 <p>Date: {setlist.eventDate}</p>
                 <p>Songs:</p>
                 <ul className="list-none list-inside">
                   {setlist.songs.map((song, index) => (
-                    <li key={index}>{index+1}. {song}</li>
+                    <li key={index}>
+                      {index + 1}. {song}
+                    </li>
                   ))}
                 </ul>
                 <DownloadPlaylistButton
@@ -48,7 +52,7 @@ const SetlistComponent = ({ setlists }) => {
                   eventDate={setlist.eventDate}
                 />
               </div>
-            ),
+            )
         )}
       </div>
     </div>
