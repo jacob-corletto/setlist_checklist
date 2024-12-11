@@ -2,7 +2,7 @@
 const TOKEN_ENDPOINT = "https://accounts.spotify.com/api/token";
 const redirect_uri = process.env.SPOTIFY_REDIRECT_URI;
 const basic = Buffer.from(
-  `${process.env.SPOTIFY_CLIENT_ID}:${process.env.SPOTIFY_CLIENT_SECRET}`,
+  `${process.env.SPOTIFY_CLIENT_ID}:${process.env.SPOTIFY_CLIENT_SECRET}`
 ).toString("base64");
 
 export default async function handler(req, res) {
@@ -25,8 +25,8 @@ export default async function handler(req, res) {
 
   // Store tokens securely - this is just an example
   res.setHeader("Set-Cookie", [
-    `spotify_access_token=${tokens.access_token}; Path=/; HttpOnly`,
-    `spotify_refresh_token=${tokens.refresh_token}; Path=/; HttpOnly`,
+    `spotify_access_token=${tokens.access_token}; Path=/;`,
+    `spotify_refresh_token=${tokens.refresh_token}; Path=/;`,
   ]);
 
   res.redirect("/");
