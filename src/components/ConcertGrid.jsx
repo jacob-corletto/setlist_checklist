@@ -112,7 +112,7 @@ export default function NearbyEventsPage() {
           {currentEvents.map((event) => (
             <div
               key={event.id}
-              className="border bg-black rounded-lg shadow-md p-4 transition-all duration-300"
+              className="border-2 bg-black rounded-lg shadow-md p-4 transition-all duration-300"
             >
               <div className="w-full h-48 bg-black rounded-t-lg mb-4">
                 {event.images?.[0] && (
