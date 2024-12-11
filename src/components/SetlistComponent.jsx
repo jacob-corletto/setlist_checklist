@@ -48,7 +48,7 @@ const SetlistComponent = ({ setlists }) => {
                   eventDate={setlist.eventDate}
                 />
               </div>
-            )
+            ),
         )}
       </div>
     </div>
