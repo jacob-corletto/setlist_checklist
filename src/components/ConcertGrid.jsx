@@ -88,7 +88,7 @@ export default function NearbyEventsPage() {
       )}
 
       <div className="relative">
-        <div className="flex justify-between items-center mb-4 bg-gray-800 rounded-lg shadow-xl">
+        <div className="flex justify-between items-center mb-4 bg-slate-800 rounded-lg shadow-xl">
           <button
             onClick={prevPage}
             className="p-2 rounded-full hover:bg-gray-100 transition-colors"
