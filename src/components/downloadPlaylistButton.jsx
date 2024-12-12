@@ -69,4 +69,4 @@ const DownloadPlaylistButton = ({
   );
 };
 
-export default DownloadPlaylistButton;
+export { DownloadPlaylistButton };

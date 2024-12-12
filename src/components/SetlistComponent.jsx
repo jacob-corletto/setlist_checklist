@@ -1,5 +1,5 @@
 import React from "react";
-import DownloadPlaylistButton from "./downloadPlaylist";
+import { DownloadPlaylistButton } from "./downloadPlaylistButton";
 import Cookies from "js-cookie";
 
 const displayedArtists = new Set();
