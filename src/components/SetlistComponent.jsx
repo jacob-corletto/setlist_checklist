@@ -9,7 +9,7 @@ const SetlistComponent = ({ setlists }) => {
   const user_id = Cookies.get("spotify_id");
   return (
     <div className="p-4">
-      {setlists.map((setlist) => {
+      {/* {setlists.map((setlist) => {
         if (setlist.songs.length > 0 && displayedArtists.has(setlist.artist)) {
           displayedArtists.add(setlist.artist);
           return (
@@ -21,7 +21,7 @@ const SetlistComponent = ({ setlists }) => {
           );
         }
         return null;
-      })}
+      })} */}
       <div className="text-white grid grid-cols-2 md:grid-cols-2 gap-4 justify-evenly">
         {setlists.map(
           (setlist) =>
@@ -33,7 +33,7 @@ const SetlistComponent = ({ setlists }) => {
                 <h2 className="text-xl font-bold mb-2 text-center">
                   {setlist.artist}
                 </h2>
-                <p>Venue: {setlist.venue}</p>
+                <p>Venue: {setlist.venue.name}</p>
                 <p>Date: {setlist.eventDate}</p>
                 <p>Songs:</p>
                 <ul className="list-none list-inside">
@@ -48,7 +48,7 @@ const SetlistComponent = ({ setlists }) => {
                   user_id={user_id}
                   tracks={setlist.songs}
                   artist={setlist.artist}
-                  venue={setlist.venue}
+                  venue={setlist.venue.name}
                   eventDate={setlist.eventDate}
                 />
               </div>

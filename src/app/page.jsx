@@ -11,6 +11,38 @@ import DropdownMenu from "@/components/DropdownMenu";
 // import "styles/globals.css";
 import Cookies from "js-cookie";
 
+const testSetlist = [
+  {
+    artist: "The Beatles",
+    venue: {
+      city: {},
+      url: "https://www.setlist.fm/venue/compaq-center-san-jose-ca-usa-6bd6ca6e.html",
+      id: "6bd6ca6e",
+      name: "Compaq Center",
+    },
+    tour: {
+      name: "North American Tour 1964",
+    },
+    songs: [
+      "Twist and Shout",
+      "You Can't Do That",
+      "All My Loving",
+      "She Loves You",
+      "Things We Said Today",
+      "Roll Over Beethoven",
+      "Can't Buy Me Love",
+      "If I Fell",
+      "I Want to Hold your hand",
+    ],
+    info: "Recorded and published as 'The Beatles at the Hollywood Bowl'",
+    url: "https://www.setlist.fm/setlist/the-beatles/1964/hollywood-bowl-hollywood-ca-63de4613.html",
+    id: "63de4613",
+    versionId: "7be1aaa0",
+    eventDate: "23-08-1964",
+    lastUpdated: "2013-10-20T05:18:08.000+0000",
+  },
+];
+
 export default function Home() {
   const [artistName, setArtistName] = useState("");
   const [setlists, setSetlists] = useState([]);
@@ -55,17 +87,20 @@ export default function Home() {
     fetchProfile();
   }, [accessToken]); // Re-fetch profile data whenever access token changes
 
+  // const fetchSetlists = async () => {
+  //   try {
+  //     const response = await axios.get(
+  //       `/api/setlists?artistName=${artistName}`
+  //     );
+  //     setSetlists(response.data.setlists);
+  //     setError(null);
+  //   } catch (error) {
+  //     console.error("Error fetching setlists:", error);
+  //     setError("Error");
+  //   }
+  // };
   const fetchSetlists = async () => {
-    try {
-      const response = await axios.get(
-        `/api/setlists?artistName=${artistName}`
-      );
-      setSetlists(response.data.setlists);
-      setError(null);
-    } catch (error) {
-      console.error("Error fetching setlists:", error);
-      setError("Error");
-    }
+    setSetlists(testSetlist);
   };
 
   const handleSubmit = (e) => {
@@ -83,7 +118,10 @@ export default function Home() {
           <ul className="flex space-x-4 items-center px-4">
             <Test />
             <li>
-              <a href="/about" className="inline-flex items-center rounded-lg bg-transparent px-5 py-2.5 text-center text-white hover:bg-purple-500 focus:outline-none focus:ring-4 focus:ring-purple-300 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800">
+              <a
+                href="/about"
+                className="inline-flex items-center rounded-lg bg-transparent px-5 py-2.5 text-center text-white hover:bg-purple-500 focus:outline-none focus:ring-4 focus:ring-purple-300 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800"
+              >
                 {" "}
                 About{" "}
               </a>
