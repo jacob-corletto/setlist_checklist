@@ -9,6 +9,7 @@ import NearbyEventsPage from "@/components/ConcertGrid";
 import Test from "@/components/testing";
 import DropdownMenu from "@/components/DropdownMenu";
 // import "styles/globals.css";
+import GetRecs from "@/components/getRecs";
 
 export default function Home() {
   const [artistName, setArtistName] = useState("");
@@ -43,7 +44,10 @@ export default function Home() {
           <ul className="flex space-x-4 items-center px-4">
             <Test />
             <li>
-              <a href="/about" className="inline-flex items-center rounded-lg bg-transparent px-5 py-2.5 text-center text-white hover:bg-purple-500 focus:outline-none focus:ring-4 focus:ring-purple-300 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800">
+              <a
+                href="/about"
+                className="inline-flex items-center rounded-lg bg-transparent px-5 py-2.5 text-center text-white hover:bg-purple-500 focus:outline-none focus:ring-4 focus:ring-purple-300 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800"
+              >
                 {" "}
                 About{" "}
               </a>
@@ -79,6 +83,7 @@ export default function Home() {
             <SetlistComponent setlists={setlists} />
           </div>
         )}
+        <GetRecs artistName={artistName} />
       </div>
     </div>
   );

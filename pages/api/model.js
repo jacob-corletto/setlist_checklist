@@ -1,25 +1,26 @@
-import { useEffect, useState } from "react";
-import * as tf from "@tensorflow/tfjs";
-import { load } from "protobufjs";
+import axios from "axios";
 
-export default function Model() {
-  const [model, setModel] = useState(null);
-  const [summary, setSummary] = useState("");
+export default async function handler(req, res) {
+  const { artistName } = req.query;
 
-  useEffect(() => {
-    const loadModel = async () => {
-      const model = await tf.loadLayersModel("music_model/model.json");
-      setModel(model);
-      const summary = [];
-      model.summary(null, (line) => summary.push(line));
-      setSummary(summary.join("\n"));
-    };
-    loadModel();
-  }, []);
-  return (
-    <div>
-      <h1>Model</h1>
-      <pre>{summary}</pre>
-    </div>
-  );
+  try {
+    const response = await axios.get(`http://127.0.0.1:5000/recommend`, {
+      headers: {
+        Accept: "application/json",
+      },
+    });
+
+    const recommendlist = response.data.recommendlist.map((recomendlist) => ({
+      recommendations: recomendlist.sets.set
+        .map((set) =>
+          set.recommendation.map((recommendation) => recommendation.name),
+        )
+        .flat(),
+    }));
+
+    res.status(200).json({ recommendlist });
+  } catch (error) {
+    console.error("Error fetching setlists:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
 }
