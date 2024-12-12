@@ -8,7 +8,7 @@ const SetlistComponent = ({ setlists }) => {
   const access_token = Cookies.get("spotify_access_token");
   const user_id = Cookies.get("spotify_id");
   return (
-    <div className="p-4">
+    <div className="p-4 bg-gradient-to-r from-slate-700 via-slate-600 to-slate-500">
       {setlists.map((setlist) => {
         if (setlist.songs.length > 0 && displayedArtists.has(setlist.artist)) {
           displayedArtists.add(setlist.artist);
@@ -28,15 +28,13 @@ const SetlistComponent = ({ setlists }) => {
             setlist.songs.length > 0 && (
               <div
                 key={setlist.id}
-                className="bg-transparent p-4 border-2 rounded-lg border-gray-200"
+                className="bg-slate-800 p-4 border-2 rounded-lg border-slate-800 shadow-xl"
               >
-                <h2 className="text-xl font-bold mb-2 text-center">
-                  {setlist.artist}
-                </h2>
+                <h2 className="border-2 rounded-lg text-xl font-bold mb-2 text-center">{setlist.artist}</h2>
                 <p>Venue: {setlist.venue}</p>
                 <p>Date: {setlist.eventDate}</p>
                 <p>Songs:</p>
-                <ul className="list-none list-inside">
+                <ul className="list-none list-inside p-4">
                   {setlist.songs.map((song, index) => (
                     <li key={index}>
                       {index + 1}. {song}

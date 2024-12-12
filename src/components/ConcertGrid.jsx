@@ -88,13 +88,13 @@ export default function NearbyEventsPage() {
       )}
 
       <div className="relative">
-        <div className="flex justify-between items-center mb-4 bg-black rounded-md">
+        <div className="flex justify-between items-center mb-4 bg-slate-800 rounded-lg shadow-xl">
           <button
             onClick={prevPage}
             className="p-2 rounded-full hover:bg-gray-100 transition-colors"
             aria-label="Previous page"
           >
-            <ChevronLeft className="w-6 h-6 text-purple-50000" />
+            <ChevronLeft className="w-6 h-6 text-purple-500" />
           </button>
           <h1 className="text-2xl font-bold mb-4 text-white mt-4">
             Music Events Near You
@@ -112,7 +112,7 @@ export default function NearbyEventsPage() {
           {currentEvents.map((event) => (
             <div
               key={event.id}
-              className="border-2 bg-black rounded-lg shadow-md p-4 transition-all duration-300"
+              className="border-2 border-slate-800 bg-slate-800 rounded-lg shadow-xl p-4 transition-all duration-300"
             >
               <div className="w-full h-48 bg-black rounded-t-lg mb-4">
                 {event.images?.[0] && (
@@ -131,7 +131,7 @@ export default function NearbyEventsPage() {
                 {new Date(event.dates.start.dateTime).toLocaleTimeString()}
               </p>
               {event._embedded?.venues?.[0] && (
-                <p className="text-gray-600 mb-2">
+                <p className="text-gray-500 mb-2">
                   {event._embedded.venues[0].name}
                 </p>
               )}

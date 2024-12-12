@@ -1,9 +1,9 @@
 const Footer = () => {
   return (
-            <div className="flex flex-col w-full items-center justify-between">
-                <footer className="bg-white rounded-lg shadow m-4 dark:bg-gray-800 bottom-0 left-50">
+            <div className="flex flex-col w-full items-center justify-between bg-slate-800">
+                <footer className="bg-white rounded-lg shadow m-4 dark:bg-slate-600 bottom-0 left-50">
                     <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
-                        <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+                        <span className="text-sm text-slate-500 sm:text-center dark:text-slate-400">
                             © 2023{" "}
                             <a href="https://flowbite.com/" className="hover:underline">
                                 Setlist Checklist
