@@ -1,8 +1,12 @@
 import React from "react";
+import { DownloadPlaylistButton } from "./downloadPlaylistButton";
+import Cookies from "js-cookie";
 
 const displayedArtists = new Set();
 
 const SetlistComponent = ({ setlists }) => {
+  const access_token = Cookies.get("spotify_access_token");
+  const user_id = Cookies.get("spotify_id");
   return (
     <div className="p-4">
       {setlists.map((setlist) => {
@@ -26,17 +30,29 @@ const SetlistComponent = ({ setlists }) => {
                 key={setlist.id}
                 className="bg-transparent p-4 border-2 rounded-lg border-gray-200"
               >
-                <h2 className="text-xl font-bold mb-2 text-center">{setlist.artist}</h2>
+                <h2 className="text-xl font-bold mb-2 text-center">
+                  {setlist.artist}
+                </h2>
                 <p>Venue: {setlist.venue}</p>
                 <p>Date: {setlist.eventDate}</p>
                 <p>Songs:</p>
                 <ul className="list-none list-inside">
                   {setlist.songs.map((song, index) => (
-                    <li key={index}>{index+1}. {song}</li>
+                    <li key={index}>
+                      {index + 1}. {song}
+                    </li>
                   ))}
                 </ul>
+                <DownloadPlaylistButton
+                  access_token={access_token}
+                  user_id={user_id}
+                  tracks={setlist.songs}
+                  artist={setlist.artist}
+                  venue={setlist.venue}
+                  eventDate={setlist.eventDate}
+                />
               </div>
-            ),
+            )
         )}
       </div>
     </div>

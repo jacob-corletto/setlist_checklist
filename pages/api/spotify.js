@@ -19,5 +19,6 @@ const getAccessToken = async (refresh_token) => {
     }),
   });
 
+  console.log(response.json());
   return response.json();
 };
