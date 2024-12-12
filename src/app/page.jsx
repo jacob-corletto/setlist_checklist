@@ -4,13 +4,12 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import SetlistComponent from "@/components/SetlistComponent";
 import styles from ".//page.module.css";
-import NearbyEventsPage from "@/components/ConcertGrid";
-// import TopTracks from "@/components/TopTracks";
-import Test from "@/components/testing";
-import DropdownMenu from "@/components/DropdownMenu";
+import ConcertGrid from "@/components/ConcertGrid";
+import TopPlayedSongs from "@/components/TopPlayedSongs";
 // import "styles/globals.css";
 import GetRecs from "@/components/getRecs";
 import Cookies from "js-cookie";
+import Test from "@/components/testing";
 
 export default function Home() {
   const [artistName, setArtistName] = useState("");
@@ -59,7 +58,7 @@ export default function Home() {
   const fetchSetlists = async () => {
     try {
       const response = await axios.get(
-        `/api/setlists?artistName=${artistName}`,
+        `/api/setlists?artistName=${artistName}`
       );
       setSetlists(response.data.setlists);
       setError(null);
@@ -113,13 +112,13 @@ export default function Home() {
       <div className="text-center text-lg text-white pt-2">
         Welcome back {userName} check out whats going on...
       </div>
-      <NearbyEventsPage />
-      {/* <TopTracks /> */}
+      <ConcertGrid />
       <div className="">
         {Error ? (
           <p>Artist not found try another or try again later</p>
         ) : (
           <div className="rounded-sm bg-black text-white">
+            <TopPlayedSongs setlists={setlists} />
             <SetlistComponent setlists={setlists} />
           </div>
         )}
